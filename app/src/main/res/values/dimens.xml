@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_padding">15dp</dimen>
+    <dimen name="fab_textsize">20sp</dimen>
+    <dimen name="fab_textupload">17sp</dimen>
+    <dimen name="fab_images">250dp</dimen>
+    <dimen name="fab_margin_top">10dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+</resources>

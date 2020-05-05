@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="@dimen/fab_padding">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tambah_data_mahasiswa"
+        android:textAlignment="center"
+        android:textSize="@dimen/fab_textsize"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etNim"
+        android:hint="@string/nim"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/etNama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nama"
+        android:inputType="text"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etHp"
+        android:hint="@string/no_telp"
+        android:inputType="number"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etJurusan"
+        android:hint="@string/jurusan"
+        android:inputType="text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="@dimen/fab_textupload"
+        android:text="@string/upload_image" />
+
+    <ImageView
+        android:id="@+id/ivProf"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fab_images"
+        android:layout_marginTop="@dimen/fab_margin_top"
+        android:adjustViewBounds="true"
+        app:layout_collapseMode="parallax"
+        app:layout_collapseParallaxMultiplier="0.7"
+        android:background="@color/cardview_shadow_start_color"/>
+
+    <Button
+        android:id="@+id/btnTambah"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="#616BC8"
+        android:text="@string/tambah_data"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#E2EBEF"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Mahasiswa</string>
+    <string name="tambah_data_mahasiswa">Tambah Data Mahasiswa</string>
+    <string name="ubah_data_mahasiswa">Ubah Data Mahasiswa</string>
+    <string name="tambah_data">Tambah Data</string>
+    <string name="udah_data">Ubah Data</string>
+    <string name="nim">NIM</string>
+    <string name="nama">Nama</string>
+    <string name="no_telp">No Hp</string>
+    <string name="jurusan">Jurusan</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+</resources>
