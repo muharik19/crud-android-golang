@@ -1,4 +1,4 @@
-package com.example.helloimage;
+package com.example.helloimage.adapter;
 
 import android.view.View;
 
