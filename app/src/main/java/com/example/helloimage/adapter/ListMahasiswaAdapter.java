@@ -1,4 +1,4 @@
-package com.example.helloimage;
+package com.example.helloimage.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -23,7 +23,11 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.helloimage.CustomOnItemClickListener;
+import com.example.helloimage.R;
+import com.example.helloimage.data.DataMahasiswa;
 import com.example.helloimage.edit.EditActivity;
+import com.example.helloimage.read.ReadAllActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;

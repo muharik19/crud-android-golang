@@ -1,4 +1,4 @@
-package com.example.helloimage;
+package com.example.helloimage.create;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +22,8 @@ import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.StringRequestListener;
 import com.androidnetworking.interfaces.UploadProgressListener;
+import com.example.helloimage.R;
+import com.example.helloimage.read.ReadAllActivity;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -37,7 +39,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class CreateActivity extends AppCompatActivity {
 
     private EditText Nim, Nama, No_Hp, Jurusan; //pembuatan variable edit text
     private ImageView imageView; //pembutan variable image
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_create);
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.ivProf); //inisialisasi value image profile
         btnSimpan = findViewById(R.id.btnTambah); //inisialisasi value btnSimpan
 
-        progressDialog = new ProgressDialog(MainActivity.this);
+        progressDialog = new ProgressDialog(CreateActivity.this);
         progressDialog.setMessage("Uploading Image. Please Wait");
         progressDialog.setCancelable(false);
         progressDialog.setMax(100);
@@ -69,20 +71,20 @@ public class MainActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dexter.withActivity(MainActivity.this)
+                Dexter.withActivity(CreateActivity.this)
                         .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                         .withListener(new PermissionListener() {
                             @Override
                             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
                                 CropImage.activity()
                                         .setGuidelines(CropImageView.Guidelines.ON)
-                                        .start(MainActivity.this);
+                                        .start(CreateActivity.this);
                             }
 
                             @Override
                             public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
                                 if (permissionDeniedResponse.isPermanentlyDenied()) {
-                                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(CreateActivity.this);
                                     builder.setTitle("Permission Required")
                                             .setMessage("Permission to access your device storage is required to pick profile image. Please go to settings to enable permission to access storage")
                                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -151,15 +153,15 @@ public class MainActivity extends AppCompatActivity {
                                             int status = jsonObject.getInt("status");
                                             String message = jsonObject.getString("message");
                                             if (status == 0) {
-                                                Toast.makeText(MainActivity.this, "Unable to upload image: " + message, Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(CreateActivity.this, "Unable to upload image: " + message, Toast.LENGTH_SHORT).show();
                                             } else {
-                                                Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
-                                                startActivity(new Intent(MainActivity.this, ReadAllActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
+                                                Toast.makeText(CreateActivity.this, message, Toast.LENGTH_SHORT).show();
+                                                startActivity(new Intent(CreateActivity.this, ReadAllActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP));
                                                 finish();
                                             }
                                         } catch (JSONException e) {
                                             e.printStackTrace();
-                                            Toast.makeText(MainActivity.this, "Parsing Error", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(CreateActivity.this, "Parsing Error", Toast.LENGTH_SHORT).show();
                                         }
                                     }
 
@@ -171,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                                         // Log.d(TAG, "onError: Failed" + anError.getErrorBody()); //untuk log pada onerror
                                         // Log.d(TAG, "onError: Failed" + anError.getErrorDetail()); //untuk log pada onerror
                                         anError.printStackTrace();
-                                        Toast.makeText(MainActivity.this, "Error Uploading Image", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(CreateActivity.this, "Error Uploading Image", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                     }

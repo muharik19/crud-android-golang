@@ -17,8 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".edit.EditActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ReadAllActivity">
+        <activity android:name=".create.CreateActivity" />
+        <activity android:name=".read.ReadAllActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.example.helloimage;
+package com.example.helloimage.read;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,10 +9,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.helloimage.adapter.ListMahasiswaAdapter;
+import com.example.helloimage.create.CreateActivity;
+import com.example.helloimage.R;
+
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.example.helloimage.data.DataMahasiswa;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -48,7 +53,7 @@ public class ReadAllActivity extends AppCompatActivity {
         fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ReadAllActivity.this, MainActivity.class));
+                startActivity(new Intent(ReadAllActivity.this, CreateActivity.class));
             }
         });
     }

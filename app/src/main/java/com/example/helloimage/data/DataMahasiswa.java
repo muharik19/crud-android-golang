@@ -1,4 +1,4 @@
-package com.example.helloimage;
+package com.example.helloimage.data;
 
 public class DataMahasiswa {
     // inisialisasi variabel

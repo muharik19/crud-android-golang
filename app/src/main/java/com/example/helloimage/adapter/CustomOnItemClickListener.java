@@ -2,10 +2,10 @@ package com.example.helloimage;
 
 import android.view.View;
 
-class CustomOnItemClickListener implements View.OnClickListener {
+public class CustomOnItemClickListener implements View.OnClickListener {
     private int position;
     private OnItemClickCallback onItemClickCallback;
-    CustomOnItemClickListener(int position, OnItemClickCallback onItemClickCallback) {
+    public CustomOnItemClickListener(int position, OnItemClickCallback onItemClickCallback) {
         this.position = position;
         this.onItemClickCallback = onItemClickCallback;
     }
